@@ -4,8 +4,18 @@
              xmlns:local="clr-namespace:App4"
              x:Class="App4.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ScrollView>
+        <StackLayout>
+            <SearchBar TextChanged="Searchtext" SearchButtonPressed="Search_OnSearchButtonPressed" x:Name="Search" Placeholder="Nhập từ cần tra"></SearchBar>
+            <ListView ItemSelected="MainListView_OnItemSelected" x:Name="MainListView" VerticalOptions="Fill" HorizontalOptions="CenterAndExpand"></ListView>
+            <StackLayout Orientation="Horizontal">
+                <Button Clicked="BtnSpeak_OnClicked" x:Name="BtnSpeak" Text="Nghe" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Button x:Name="Button1" Text="Tra từ" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="Bamnut"></Button>
+                <Button x:Name="Translate" Text="Dịch câu" Clicked="Translate_OnClicked"></Button>
+                <Button x:Name="Image" Text="Quét ảnh" Clicked="Image_OnClicked"></Button>
+            </StackLayout>
+            <Label x:Name="Result" Text="TỪ ĐIỂN ĐIÊNG KHÙN!" HorizontalOptions="Center" />
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
